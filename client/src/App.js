@@ -43,10 +43,15 @@ class App extends React.Component {
 		})
 	}
 
+	hideComponent(name){
+		console.log(name);
+
+	}
+
 	render() {
 		return (
 			<div className='App'>
-				<a href='http://localhost:8888/login' style={{ display: this.state.loggedIn ? "none" : "block"}}> Login to Spotify </a>
+				<a href='http://localhost:8888/login' style={{ display: this.state.loggedIn ? "none" : "block"}} className='signup-btn'><span> Login to Spotify </span></a>
 				<div>
 					<img src={this.state.nowPlaying.albumArt} style={{ height: 150 }}/>
 				</div>
