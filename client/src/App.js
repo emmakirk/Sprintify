@@ -46,17 +46,14 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className='App'>
-				<a href='http://localhost:8888/login'> Login to Spotify </a>
-				<div>
-				Now Playing: { this.state.nowPlaying.name }
-				</div>
+				<a href='http://localhost:8888/login' style={{ display: this.state.loggedIn ? "none" : "block"}}> Login to Spotify </a>
 				<div>
 					<img src={this.state.nowPlaying.albumArt} style={{ height: 150 }}/>
 				</div>
 				{ this.state.loggedIn &&
 					<button onClick={() => this.getNowPlaying()}>
 						Check Now Playing
-					</button>
+					</button> 
 				}
 			</div>
 		);
