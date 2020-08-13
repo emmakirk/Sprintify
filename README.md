@@ -14,4 +14,4 @@
 - Nagivate to Client, 'npm install' followed by 'npm start'
 
 This project is a psudo-fork of, would be hitting my head against the wall without this boiler plate:
-https://medium.com/@jonnykalambay/now-playing-using-spotifys-awesome-api-with-react-7db8173a7b13Huge
+https://medium.com/@jonnykalambay/now-playing-using-spotifys-awesome-api-with-react-7db8173a7b13
