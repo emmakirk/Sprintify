@@ -1,4 +1,5 @@
 import React from 'react';
+import Playlists from './Components/Playlists.js'
 import logo from './logo.svg';
 import './App.css';
 import SpotifyWebApi from 'spotify-web-api-js';
@@ -17,7 +18,8 @@ class App extends React.Component {
 		}
 		this.state = {
 			loggedIn: token ? true : false,
-			nowPlaying: { name: 'Not Checked', albumArt: ' '}
+			username: "",
+			nowPlaying: { name: 'null', albumArt: ' '}
 		}
 	}
 	getHashParams() {
@@ -42,26 +44,31 @@ class App extends React.Component {
 			});
 		})
 	}
-
-	hideComponent(name){
-		console.log(name);
-
+	getUserInfo(){
+		spotifyApi.getMe()
+		.then((response) => {
+			console.log(response.item)
+			this.setState({
+				username: response.display_name
+			});
+		})
 	}
 
 	render() {
-		return (
-			<div className='App'>
-				<a href='http://localhost:8888/login' style={{ display: this.state.loggedIn ? "none" : "block"}} className='signup-btn'><span> Login to Spotify </span></a>
-				<div>
-					<img src={this.state.nowPlaying.albumArt} style={{ height: 150 }}/>
+		if (!this.state.loggedIn){
+			return (
+				<div className='App'>
+					<a href='http://localhost:8888/login' className='signup-btn'><span> Login to Spotify </span></a>
+					{this.state.username}
 				</div>
-				{ this.state.loggedIn &&
-					<button onClick={() => this.getNowPlaying()}>
-						Check Now Playing
-					</button> 
-				}
-			</div>
-		);
+			);
+		} else{
+			return (
+				<div className='App'>
+					<Playlists/>
+				</div>
+			);
+		}
 	}
 }
 
