@@ -36,8 +36,8 @@ body{
 
 /* login to Spotify button */
 .signup-btn{
-  top:40px;
-  right: 80px;
+  top: 11px;
+  right: 20px;
   position: absolute;
   text-decoration: none;
   color: #ffffff;
@@ -51,7 +51,7 @@ body{
 /* <span> button </span> for proper padding */
 .signup-btn span{ 
   display: block;
-  padding: 8px 22px;
+  padding: 5px 10px;
 }
 
 @keyframes App-logo-spin {

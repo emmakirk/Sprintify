@@ -1,0 +1,37 @@
+<!-- https://www.youtube.com/watch?v=-2LtZRi6Q0s gets a lot of credit-->
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Website title in tab of browser-->
+	<title>Sprintify</title>
+	<meta http-equiv="refresh" content="url=http://localhost:8000/" />
+	<!-- This ensures our use of utf, and our 
+		added response code to our html doc-->
+	<meta charset="utf-8">
+	<meta name="viewport" content = "width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+
+	<style type="text/css">
+		#login, #loggiedin {
+			display: none;
+		}
+	</style>
+
+</head>
+<body>
+	<form action="">
+		<input type="hidden" id='hidden_token'>
+		<div class = "menu">
+			<ul>
+				<li class ="logo"><img src="image_resources/sprintify_logo.png"></li>
+				<li>About</li>
+				<li>Email</li>
+				<li id = "LoginButton"><a href="#" class="signup-btn"><span>Login</span></a></li>
+			</ul>
+		</div>
+	</form>
+	<script src="app.js" type="text/javascript"></script>
+
+</body>
+</html>
+

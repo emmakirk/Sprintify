@@ -4,7 +4,6 @@ import SpotifyWebApi from 'spotify-web-api-js';
 
 const spotifyApi = new SpotifyWebApi();
 
-
 class Playlists extends React.Component {
 	constructor(props) {
 		super(props);
