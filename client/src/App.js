@@ -42,7 +42,7 @@ class App extends React.Component {
     if (!this.state.loggedIn){
       return (
         <div className='App'>
-          <NavBar loggedIn={false}/>
+          <NavBar loggedIn={this.state.loggedIn}/>
         </div>
       );
     } else {
