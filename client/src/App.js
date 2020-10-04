@@ -1,20 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import SpotifyWebApi from 'spotify-web-api-js';
+import Navbar from "react-bootstrap/NavBar"
+import Nav from "react-bootstrap/Nav"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+
 //https://github.com/jmperez/spotify-web-api-js
 
 // local Imports
 import Playlist from './Components/Playlists.js'
-
-const spotifyApi = new SpotifyWebApi();
+import NavBar from './Segments/Sprint_Navbar.jsx'
 
 class App extends React.Component {
-
   constructor(){
     super();
     const params = this.getHashParams();
     const token = params.access_token;
+    const spotifyApi = new SpotifyWebApi();
     
     if (token){
       spotifyApi.setAccessToken(token);
@@ -40,7 +42,7 @@ class App extends React.Component {
     if (!this.state.loggedIn){
       return (
         <div className='App'>
-          <a href='http://localhost:8888/login' className='signup-btn'><span> Login to Spotify </span></a>
+          <NavBar loggedIn={this.state.loggedIn}/>
         </div>
       );
     } else {
